@@ -1,0 +1,58 @@
+/* Custom CSS for the Shop page.
+   Keep this file small and purpose focused. */
+
+:root {
+  --brand-green: #2F4B4D;
+  --brand-blue: #4B7692;
+  --ui-text: #ffffff;
+  --error-color: #f87171;
+  --success-color: #4ade80;
+}
+
+body {
+  color: var(--ui-text);
+}
+
+/* Improve focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}
+
+/* ==========================================
+   FORM VALIDATION STYLES
+   ========================================== */
+
+/* Error message styling */
+.error-message {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--error-color);
+}
+
+.error-message.hidden {
+  display: none;
+}
+
+/* Input states */
+input.border-red-500,
+select.border-red-500 {
+  border-color: var(--error-color) !important;
+}
+
+input.border-green-500,
+select.border-green-500 {
+  border-color: var(--success-color) !important;
+}
+
+/* Form field transitions */
+input,
+select {
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Success message styling */
+.text-green-400 {
+  color: var(--success-color);
+}

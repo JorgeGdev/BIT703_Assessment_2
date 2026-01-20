@@ -1,0 +1,18 @@
+/* Custom CSS for the Product Detail page.
+   Keep this file small and purpose focused. */
+
+:root {
+  --brand-green: #2F4B4D;
+  --brand-blue: #4B7692;
+  --ui-text: #ffffff;
+}
+
+body {
+  color: var(--ui-text);
+}
+
+/* Improve focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 2px;
+}

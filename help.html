@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aotearoa Adventure Gear | Help</title>
+
+  <!-- Tailwind generated locally (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Small page specific CSS -->
+  <link rel="stylesheet" href="css/custom-help.css" />
+</head>
+
+<body class="min-h-screen bg-brand-green">
+  <!-- =========================
+       Header and Top Navigation
+       ========================= -->
+  <header class="border-b border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between gap-4 py-3">
+        <!-- Left: logo -->
+        <a href="index.html" class="inline-flex items-center gap-2" aria-label="Go to Home">
+          <img src="src/images/logo.png" alt="Aotearoa Adventure Gear logo" class="h-7 w-auto" />
+        </a>
+
+        <!-- Center: main navigation -->
+        <nav class="hidden md:block" aria-label="Primary navigation">
+          <ul class="flex items-center gap-4 text-sm text-white">
+            <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: cart button -->
+        <a
+          href="cart.html"
+          class="inline-flex items-center gap-2 bg-brand-blue px-4 py-2 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true">
+            <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6l.3 2h13.9a1 1 0 0 1 1 .8l-1.2 6.5a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.6L4.2 3H2V1h3a1 1 0 0 1 1 .8L6.2 6Z"/>
+          </svg>
+          <span>Your Cart</span>
+        </a>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav class="md:hidden pb-3" aria-label="Primary navigation mobile">
+        <ul class="flex items-center justify-center gap-4 text-xs text-white">
+          <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+          <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+          <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+          <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         Page title
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <header class="max-w-3xl">
+          <h1 class="text-3xl font-light tracking-widest text-white">Help</h1>
+          <p class="mt-5 text-sm leading-7 text-white opacity-80">
+            This page provides basic support content for the prototype, including shipping, returns, and contact details.
+          </p>
+        </header>
+
+        <hr class="mt-10 border-brand-green-dark" />
+
+        <!-- =========================
+             Help sections
+             ========================= -->
+        <div class="mt-10 grid grid-cols-1 gap-10 lg:grid-cols-3 lg:gap-12">
+          <section class="lg:col-span-2" aria-label="Help content">
+            <h2 class="text-xl font-light tracking-widest text-white">Frequently asked questions</h2>
+
+            <div class="mt-6 space-y-6">
+              <article class="border border-white border-opacity-20 bg-transparent backdrop-blur-sm px-6 py-5">
+                <h3 class="text-sm tracking-widest text-white">How does shipping work?</h3>
+                <p class="mt-3 text-sm leading-7 text-white opacity-80">
+                  Shipping options are selected during checkout. Free shipping may apply based on the order total,
+                  and the summary panel updates automatically.
+                </p>
+              </article>
+
+              <article class="border border-white border-opacity-20 bg-transparent backdrop-blur-sm px-6 py-5">
+                <h3 class="text-sm tracking-widest text-white">Can I change quantities in the cart?</h3>
+                <p class="mt-3 text-sm leading-7 text-white opacity-80">
+                  Yes. The cart supports quantity changes and recalculates totals instantly to keep the checkout flow consistent.
+                </p>
+              </article>
+
+              <article class="border border-white border-opacity-20 bg-transparent backdrop-blur-sm px-6 py-5">
+                <h3 class="text-sm tracking-widest text-white">What is the returns policy?</h3>
+                <p class="mt-3 text-sm leading-7 text-white opacity-80">
+                  This is a prototype. For a real store, returns would include conditions and time frames.
+                  Here we show the content structure only.
+                </p>
+              </article>
+            </div>
+
+            <h2 class="mt-10 text-xl font-light tracking-widest text-white">Contact</h2>
+            <p class="mt-4 text-sm leading-7 text-white opacity-80">
+              For the prototype, contact details are presented as static content.
+              You can link this to a real contact form in a full implementation.
+            </p>
+
+            <ul class="mt-4 space-y-2 text-sm text-white opacity-80">
+              <li>Email: support@example.com</li>
+              <li>Phone: +64 00 000 0000</li>
+              <li>Hours: Mon to Fri, 9am to 5pm</li>
+            </ul>
+
+            <div class="mt-10 flex gap-4">
+              <a
+                href="shop.html"
+                class="inline-flex items-center justify-center bg-brand-blue px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+              >
+                Continue Shopping
+              </a>
+              <a
+                href="index.html"
+                class="inline-flex items-center justify-center border-2 border-white px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-white hover:text-brand-green transition-colors focus:outline-none"
+              >
+                Back to Home
+              </a>
+            </div>
+          </section>
+
+          <aside aria-label="Policies" class="border border-white border-opacity-20 bg-transparent backdrop-blur-sm px-6 py-6">
+            <h2 class="text-xl font-light tracking-widest text-white">Policies</h2>
+
+            <dl class="mt-6 space-y-4 text-sm text-white opacity-80">
+              <div>
+                <dt class="tracking-widest text-white opacity-90">SHIPPING</dt>
+                <dd class="mt-2">
+                  Options are shown during checkout. Totals update instantly based on selected delivery.
+                </dd>
+              </div>
+
+              <div>
+                <dt class="mt-4 tracking-widest text-white opacity-90">PAYMENTS</dt>
+                <dd class="mt-2">
+                  Payment options are presented on the payment page as part of the prototype flow.
+                </dd>
+              </div>
+
+              <div>
+                <dt class="mt-4 tracking-widest text-white opacity-90">RETURNS</dt>
+                <dd class="mt-2">
+                  Prototype content only. A real store would define return conditions and time frames.
+                </dd>
+              </div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer (same style)
+       ========================= -->
+  <footer class="py-8 border-t border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <nav aria-label="Footer navigation" class="text-xs text-white opacity-80">
+        <ul class="flex flex-wrap items-center justify-center gap-3">
+          <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+          <li class="text-white opacity-50" aria-hidden="true">|</li>
+          <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+          <li class="text-white opacity-50" aria-hidden="true">|</li>
+          <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+          <li class="text-white opacity-50" aria-hidden="true">|</li>
+          <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+        </ul>
+      </nav>
+
+      <div class="mt-4 text-sm text-white opacity-80">
+        <span aria-hidden="true">©</span> Aotearoa Adventure Gear
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

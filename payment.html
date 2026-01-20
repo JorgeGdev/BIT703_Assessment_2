@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aotearoa Adventure Gear | Payment</title>
+
+  <!-- Tailwind generated locally (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Custom CSS kept separate and purpose named -->
+  <link rel="stylesheet" href="css/custom-payment.css" />
+</head>
+
+<body class="min-h-screen bg-brand-green">
+  <!-- =========================
+       Header and Top Navigation
+       ========================= -->
+  <header class="border-b border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between gap-4 py-3">
+        <!-- Left: logo -->
+        <a href="index.html" class="inline-flex items-center gap-2" aria-label="Go to Home">
+          <img src="src/images/logo.png" alt="Aotearoa Adventure Gear Logo" class="h-7 w-auto" />
+        </a>
+
+        <!-- Center: main navigation -->
+        <nav class="hidden md:block" aria-label="Primary navigation">
+          <ul class="flex items-center gap-4 text-sm text-white">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="about.html" class="hover:text-white">About</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="help.html" class="hover:text-white">Help</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: cart button -->
+        <a
+          href="cart.html"
+          class="inline-flex items-center gap-2 bg-brand-blue px-4 py-2 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true">
+            <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6l.3 2h13.9a1 1 0 0 1 1 .8l-1.2 6.5a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.6L4.2 3H2V1h3a1 1 0 0 1 1 .8L6.2 6Z"/>
+          </svg>
+          <span>Your Cart</span>
+        </a>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav class="md:hidden pb-3" aria-label="Primary navigation mobile">
+        <ul class="flex items-center justify-center gap-4 text-xs text-white">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+          <li><a href="help.html" class="hover:text-white">Help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         Checkout steps
+         ========================= -->
+    <section class="py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <nav aria-label="Checkout steps">
+          <ol class="flex items-center justify-center gap-12 text-sm">
+            <li class="text-brand-green-light">
+              <span>1. Shopping Cart</span>
+            </li>
+
+            <li class="text-brand-green-light">
+              <span>2. Shipping Details</span>
+            </li>
+
+            <li class="text-white">
+              <span class="font-medium">3. Payment Options</span>
+              <div class="mt-3 h-px w-44 bg-gray-700"></div>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         Payment method (left) + Summary (right)
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
+          <!-- Left: payment method -->
+          <section class="lg:col-span-2" aria-label="Payment method">
+            <header>
+              <h1 class="text-3xl font-light tracking-widest text-white">Payment method</h1>
+            </header>
+
+            <hr class="mt-6 border-brand-green-dark" />
+
+            <form id="paymentForm" class="mt-8" action="#" method="post" novalidate>
+              <!-- Credit card option -->
+              <fieldset>
+                <legend class="sr-only">Choose a payment method</legend>
+
+                <article class="border border-brand-green-dark bg-brand-green px-6 py-6">
+                  <div class="flex items-start gap-4">
+                    <input
+                      type="radio"
+                      name="paymentMethod"
+                      value="card"
+                      class="mt-1"
+                      checked
+                      aria-label="Credit card"
+                    />
+
+                    <div class="min-w-0">
+                      <p class="text-sm text-white">Credit Card</p>
+                      <p class="mt-2 max-w-xl text-xs leading-6 text-white opacity-80">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                      </p>
+                    </div>
+                  </div>
+
+                  <!-- Card inputs -->
+                  <div class="mt-6 grid grid-cols-1 gap-6">
+                    <div class="grid grid-cols-1 gap-6 sm:grid-cols-12 sm:items-center">
+                      <!-- Card number -->
+                      <div class="sm:col-span-6">
+                        <label class="sr-only" for="cardNumber">Card number</label>
+                        <div class="relative">
+                          <input
+                            id="cardNumber"
+                            name="cardNumber"
+                            type="text"
+                            inputmode="numeric"
+                            placeholder="0000 0000 0000 0000 *"
+                            required
+                            minlength="13"
+                            maxlength="19"
+                            autocomplete="cc-number"
+                            title="Please enter a valid credit card number (13-19 digits)"
+                            class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 pr-10 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                          />
+                          <!-- Card icon placeholder -->
+                          <span id="cardTypeIcon" class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white opacity-80" aria-hidden="true">
+                            ▭
+                          </span>
+                        </div>
+                        <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                      </div>
+
+                      <!-- Expiry -->
+                      <div class="sm:col-span-3">
+                        <label class="sr-only" for="expiry">Expiry date</label>
+                        <input
+                          id="expiry"
+                          name="expiry"
+                          type="text"
+                          placeholder="MM / YY *"
+                          required
+                          pattern="(0[1-9]|1[0-2])\s?\/\s?\d{2}"
+                          maxlength="7"
+                          autocomplete="cc-exp"
+                          title="Please enter a valid expiry date in MM/YY format"
+                          class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                        />
+                        <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                      </div>
+
+                      <!-- CVV -->
+                      <div class="sm:col-span-3">
+                        <label class="sr-only" for="cvv">CVV</label>
+                        <div class="relative">
+                          <input
+                            id="cvv"
+                            name="cvv"
+                            type="text"
+                            inputmode="numeric"
+                            placeholder="CVV *"
+                            required
+                            pattern="\d{3,4}"
+                            minlength="3"
+                            maxlength="4"
+                            autocomplete="cc-csc"
+                            title="Please enter a valid CVV (3-4 digits)"
+                            class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 pr-10 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                          />
+                          <!-- Info icon placeholder -->
+                          <span class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-white opacity-80" aria-hidden="true">
+                            i
+                          </span>
+                        </div>
+                        <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                      </div>
+                    </div>
+
+                    <!-- Card holder name -->
+                    <div>
+                      <label class="sr-only" for="cardHolder">Card Holder Name</label>
+                      <input
+                        id="cardHolder"
+                        name="cardHolder"
+                        type="text"
+                        placeholder="Card Holder Name *"
+                        required
+                        minlength="2"
+                        maxlength="100"
+                        pattern="[A-Za-z\s\-']+"
+                        autocomplete="cc-name"
+                        title="Please enter the name as shown on your card"
+                        class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                      />
+                      <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                    </div>
+                  </div>
+                </article>
+
+                <!-- Paypal option -->
+                <article class="mt-6 border border-brand-green-dark bg-brand-green px-6 py-6">
+                  <div class="flex items-start justify-between gap-6">
+                    <div class="flex items-start gap-4">
+                      <input
+                        type="radio"
+                        name="paymentMethod"
+                        value="paypal"
+                        class="mt-1"
+                        aria-label="Paypal"
+                      />
+
+                      <div class="min-w-0">
+                        <p class="text-sm text-white">Paypal</p>
+                        <p class="mt-2 max-w-xl text-xs leading-6 text-white opacity-80">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Paypal brand placeholder aligned right -->
+                    <div class="hidden sm:block text-2xl font-semibold text-white opacity-80" aria-hidden="true">
+                      PayPal
+                    </div>
+                  </div>
+                </article>
+              </fieldset>
+
+              <div class="mt-12 flex items-center gap-4">
+                <button
+                  type="submit"
+                  id="payNowBtn"
+                  class="inline-flex items-center justify-center bg-brand-blue px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+                >
+                  Pay Now
+                </button>
+
+                <a
+                  href="shipping.html"
+                  class="inline-flex items-center justify-center bg-brand-green-dark px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+                >
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right: summary -->
+          <aside class="lg:col-span-1" aria-label="Order summary">
+            <h2 class="text-3xl font-light tracking-widest text-white">Summary</h2>
+            <hr class="mt-6 border-brand-green-dark" />
+
+            <div class="mt-8 space-y-8">
+              <!-- Summary item 1 -->
+              <article class="flex items-center gap-5">
+                <figure class="w-20">
+                  <div class="flex aspect-square items-center justify-center border border-brand-green-dark bg-brand-green">
+                    <img src="src/images/products/prod_01_backpack.png" alt="Order summary hiking backpack" class="h-full w-full object-cover" />
+                  </div>
+                </figure>
+
+                <div class="min-w-0">
+                  <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                  <p class="mt-2 text-sm text-white opacity-80">$300</p>
+                </div>
+              </article>
+
+              <!-- Summary item 2 -->
+              <article class="flex items-center gap-5">
+                <figure class="w-20">
+                  <div class="flex aspect-square items-center justify-center border border-brand-green-dark bg-brand-green">
+                    <img src="src/images/products/prod_02_tent.png" alt="Order summary tent" class="h-full w-full object-cover" />
+                  </div>
+                </figure>
+
+                <div class="min-w-0">
+                  <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                  <p class="mt-2 text-sm text-white opacity-80">$300</p>
+                </div>
+              </article>
+
+              <hr class="border-brand-green-dark" />
+
+              <div class="flex items-center justify-between text-xs tracking-widest text-white opacity-80">
+                <p>HAVE A VOUCHER?</p>
+                <span aria-hidden="true">▾</span>
+              </div>
+
+              <dl class="space-y-3 text-sm text-white opacity-80">
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">SUBTOTAL</dt>
+                  <dd>$600</dd>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">SHIPPING</dt>
+                  <dd>FREE</dd>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">TAXES</dt>
+                  <dd>$13</dd>
+                </div>
+              </dl>
+
+              <hr class="border-brand-green-dark" />
+
+              <div class="flex items-end justify-between">
+                <p class="text-xl tracking-widest text-white">TOTAL</p>
+                <p class="text-3xl font-light text-white">$613</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer (wireframe style)
+       ========================= -->
+  <footer class="py-8">
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <nav aria-label="Footer navigation" class="text-xs text-white opacity-80">
+        <ul class="flex flex-wrap items-center justify-center gap-3">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="help.html" class="hover:text-white">Help</a></li>
+        </ul>
+      </nav>
+
+      <div class="mt-4 text-sm text-white opacity-80">
+        <span aria-hidden="true">©</span> Your Company Name
+      </div>
+    </div>
+  </footer>
+  <!-- JavaScript -->
+  <script src="js/common.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/payment.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aotearoa Adventure Gear | Home</title>
+
+  <!-- Tailwind generated locally (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!-- AOS (Animate On Scroll) CSS - Professional scroll animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <!-- Floating UI CSS for tooltips -->
+  <style>
+    @keyframes floatBadge {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-8px); }
+    }
+    
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    
+    .floating-badge {
+      animation: floatBadge 2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    
+    .floating-badge > div {
+      display: inline-block;
+    }
+    
+    .floating-tooltip {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+      transform: translateY(10px);
+    }
+    
+    .floating-tooltip.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+    
+    .quick-view-btn {
+      opacity: 0;
+      transform: translateY(20px) scale(0.9);
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    
+    .group:hover .quick-view-btn {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+    
+    .shimmer-effect {
+      background: linear-gradient(
+        90deg,
+        rgba(255,255,255,0) 0%,
+        rgba(255,255,255,0.3) 50%,
+        rgba(255,255,255,0) 100%
+      );
+      background-size: 200% 100%;
+      animation: shimmer 3s infinite;
+    }
+  </style>
+
+  <!-- Custom CSS kept separate and purpose named -->
+  <link rel="stylesheet" href="css/custom-home.css" />
+</head>
+
+<body class="min-h-screen bg-brand-green">
+  <!-- =========================
+       Header and Top Navigation
+       ========================= -->
+  <header class="border-b border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between gap-4 py-3">
+        <!-- Left: logo + search -->
+        <div class="flex items-center gap-3">
+          <!-- Logo -->
+          <a href="index.html" class="inline-flex items-center gap-2" aria-label="Go to Home">
+            <img src="src/images/logo.png" alt="Aotearoa Adventure Gear Logo" class="h-7 w-auto" />
+          </a>
+
+          <!-- Search (matches wireframe position and size) -->
+          <form class="relative w-56 sm:w-72" action="#" method="get" aria-label="Search products">
+            <label class="sr-only" for="search">Search</label>
+            <span class="pointer-events-none absolute inset-y-0 left-3 flex items-center">
+              <svg viewBox="0 0 24 24" class="h-4 w-4 text-white" aria-hidden="true">
+                <path fill="currentColor" d="M10 2a8 8 0 1 0 4.9 14.3l4.4 4.4 1.4-1.4-4.4-4.4A8 8 0 0 0 10 2Zm0 2a6 6 0 1 1 0 12 6 6 0 0 1 0-12Z"/>
+              </svg>
+            </span>
+            <input
+              id="search"
+              name="q"
+              type="search"
+              placeholder="Search..."
+              class="w-full border border-brand-green-dark bg-brand-green-dark py-2 pl-9 pr-3 text-sm text-white placeholder:text-white placeholder:opacity-60 focus:border-brand-blue focus:outline-none"
+            />
+          </form>
+        </div>
+
+        <!-- Middle: main navigation -->
+        <nav class="hidden md:block" aria-label="Primary navigation">
+          <ul class="flex items-center gap-4 text-sm text-white">
+            <li><a href="index.html" class="hover:text-brand-blue-light" aria-current="page">Home</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: cart button -->
+        <a
+          href="cart.html"
+          class="inline-flex items-center gap-2 bg-brand-blue px-4 py-2 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true">
+            <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6l.3 2h13.9a1 1 0 0 1 1 .8l-1.2 6.5a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.6L4.2 3H2V1h3a1 1 0 0 1 1 .8L6.2 6Z"/>
+          </svg>
+          <span>Your Cart</span>
+        </a>
+      </div>
+
+      <!-- Mobile nav (simple and clean) -->
+      <nav class="md:hidden pb-3" aria-label="Primary navigation mobile">
+        <ul class="flex items-center justify-center gap-4 text-xs text-white">
+          <li><a href="index.html" class="hover:text-brand-blue-light" aria-current="page">Home</a></li>
+          <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+          <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+          <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         Hero: tagline + images + button
+         ========================= -->
+    <section class="py-16 sm:py-20">
+      <div class="mx-auto max-w-6xl px-4 text-center">
+        <h1 class="text-3xl font-light tracking-widest text-white sm:text-5xl" data-aos="fade-up">
+          Tagline describing your e shop
+        </h1>
+        <div class="mx-auto mt-6 h-px w-24 bg-white" data-aos="fade-up" data-aos-delay="200"></div>
+
+        <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-8">
+          <!-- Image placeholders to match wireframe boxes -->
+          <figure class="mx-auto w-44 sm:w-full" data-aos="zoom-in" data-aos-delay="100">
+            <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+              <img src="src/images/categories/cat_hiking.png" alt="Hiking category image" class="h-full w-full object-cover" />
+            </div>
+          </figure>
+
+          <figure class="mx-auto w-44 sm:w-full" data-aos="zoom-in" data-aos-delay="300">
+            <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+              <img src="src/images/categories/cat_camping.png" alt="Camping category image" class="h-full w-full object-cover" />
+            </div>
+          </figure>
+
+          <figure class="mx-auto w-44 sm:w-full" data-aos="zoom-in" data-aos-delay="500">
+            <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+              <img src="src/images/categories/cat_climbing.png" alt="Climbing category image" class="h-full w-full object-cover" />
+            </div>
+          </figure>
+        </div>
+
+        <div class="mt-10" data-aos="flip-up" data-aos-delay="600">
+          <a
+            href="shop.html"
+            class="inline-flex items-center justify-center bg-brand-blue px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+          >
+            Shop Now
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         Featured Products
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-center text-3xl font-light tracking-widest text-white sm:text-4xl" data-aos="fade-down">
+          Featured Products
+        </h2>
+
+        <!-- Countdown Timer Banner -->
+        <div class="mt-6 flex flex-col items-center justify-center" data-aos="zoom-in" data-aos-delay="200">
+          <p class="text-sm text-brand-blue-light tracking-wider mb-2">LIMITED TIME OFFER</p>
+          <div id="countdownTimer" class="flex items-center gap-3 bg-gradient-to-r from-brand-blue to-brand-blue-dark px-6 py-3 rounded-lg shadow-lg">
+            <svg class="w-5 h-5 text-white animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+            <span class="text-white text-sm font-medium">Offer ends in:</span>
+            <div class="flex items-center gap-1 font-mono">
+              <span id="countHours" class="bg-white/20 text-white font-bold px-2 py-1 rounded text-lg">00</span>
+              <span class="text-white font-bold">:</span>
+              <span id="countMinutes" class="bg-white/20 text-white font-bold px-2 py-1 rounded text-lg">00</span>
+              <span class="text-white font-bold">:</span>
+              <span id="countSeconds" class="bg-white/20 text-white font-bold px-2 py-1 rounded text-lg">00</span>
+            </div>
+          </div>
+          <p class="text-xs text-white/60 mt-2">Free shipping on all featured products!</p>
+        </div>
+
+        <!-- Swiper Container -->
+        <div class="relative mt-10">
+          <div class="swiper featured-swiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/prod_01_backpack.png" alt="Hiking backpack" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">HIKING BACKPACK</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+
+              <!-- Slide 2 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/prod_02_tent.png" alt="Camping tent" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">CAMPING TENT</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+
+              <!-- Slide 3 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/prod_03_jacket.png" alt="Thermal jacket" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">THERMAL JACKET</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+
+              <!-- Slide 4 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/04_sleepingbag.png" alt="Sleeping bag" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">SLEEPING BAG</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+
+              <!-- Slide 5 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/05_trekking_poles.png" alt="Trekking poles" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">TREKKING POLES</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+
+              <!-- Slide 6 -->
+              <div class="swiper-slide">
+                <article class="group">
+                  <div class="aspect-[4/5] overflow-hidden border border-brand-green-dark bg-brand-green-dark shadow-xl">
+                    <img src="src/images/products/prod_06_hiking_boots.png" alt="Hiking boots" class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
+                  </div>
+                  <p class="mt-3 text-center text-xs tracking-widest text-white">HIKING BOOTS</p>
+                  <p class="mt-1 text-center text-sm font-light text-brand-blue-light">$300</p>
+                </article>
+              </div>
+            </div>
+
+            <!-- Navigation Buttons -->
+            <div class="swiper-button-prev !text-white hover:!text-brand-blue-light"></div>
+            <div class="swiper-button-next !text-white hover:!text-brand-blue-light"></div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-gray-200" />
+
+    <!-- =========================
+         Newsletter
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 items-center gap-8 md:grid-cols-2">
+          <div data-aos="fade-right">
+            <h2 class="text-3xl font-light tracking-widest text-white sm:text-4xl">Newsletter</h2>
+            <p class="mt-3 max-w-md text-sm text-white opacity-80">
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque.
+            </p>
+          </div>
+
+          <form class="flex w-full items-center justify-start gap-3 md:justify-end" action="#" method="post" aria-label="Newsletter signup" data-aos="fade-left" data-aos-delay="200">
+            <label class="sr-only" for="email">Email Address</label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              placeholder="Email Address"
+              class="w-full max-w-xs border border-brand-green-dark bg-brand-green-dark px-4 py-2 text-sm text-white placeholder:text-white placeholder:opacity-60 focus:border-brand-blue focus:outline-none"
+            />
+            <button
+              type="submit"
+              class="bg-brand-blue px-6 py-2 text-sm text-white hover:bg-brand-blue-dark focus:outline-none"
+            >
+              Subscribe
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         Product grid section (matches wireframe layout)
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 gap-10 lg:grid-cols-3">
+          <!-- Left: large product card -->
+          <article class="lg:col-span-1">
+            <div class="flex aspect-square items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+              <img src="src/images/products/prod_01_backpack.png" alt="Hiking backpack product photo" class="h-full w-full object-cover" />
+            </div>
+
+            <div class="mt-4 flex items-end justify-between">
+              <div>
+                <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                <p class="text-xs text-brand-blue-light">$300</p>
+              </div>
+              <p class="text-xs text-white" aria-label="Rating 3 out of 5">★★★☆☆</p>
+            </div>
+          </article>
+
+          <!-- Right: 2x2 small product cards -->
+          <div class="lg:col-span-2">
+            <div class="grid grid-cols-1 gap-8 sm:grid-cols-2">
+              <!-- Small product card 1 -->
+              <article>
+                <div class="flex aspect-[16/9] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+                  <img src="src/images/products/prod_02_tent.png" alt="Tent product photo" class="h-full w-full object-cover" />
+                </div>
+                <div class="mt-3 flex items-end justify-between">
+                  <div>
+                    <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                    <p class="text-xs text-brand-blue-light">$300</p>
+                  </div>
+                  <p class="text-xs text-white" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </article>
+
+              <!-- Small product card 2 -->
+              <article>
+                <div class="flex aspect-[16/9] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+                  <img src="src/images/products/prod_03_jacket.png" alt="Jacket product photo" class="h-full w-full object-cover" />
+                </div>
+                <div class="mt-3 flex items-end justify-between">
+                  <div>
+                    <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                    <p class="text-xs text-brand-blue-light">$300</p>
+                  </div>
+                  <p class="text-xs text-white" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </article>
+
+              <!-- Small product card 3 -->
+              <article>
+                <div class="flex aspect-[16/9] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+                  <img src="src/images/products/04_sleepingbag.png" alt="Sleeping bag product photo" class="h-full w-full object-cover" />
+                </div>
+                <div class="mt-3 flex items-end justify-between">
+                  <div>
+                    <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                    <p class="text-xs text-brand-blue-light">$300</p>
+                  </div>
+                  <p class="text-xs text-white" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </article>
+
+              <!-- Small product card 4 -->
+              <article>
+                <div class="flex aspect-[16/9] items-center justify-center border border-brand-green-dark bg-brand-green-dark">
+                  <img src="src/images/products/05_trekking_poles.png" alt="Trekking poles product photo" class="h-full w-full object-cover" />
+                </div>
+                <div class="mt-3 flex items-end justify-between">
+                  <div>
+                    <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                    <p class="text-xs text-brand-blue-light">$300</p>
+                  </div>
+                  <p class="text-xs text-white" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         About Your Shop
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 text-center">
+        <h2 class="text-3xl font-light tracking-widest text-white sm:text-4xl" data-aos="fade-up">
+          About Your Shop
+        </h2>
+        <p class="mx-auto mt-4 max-w-2xl text-sm text-white opacity-80" data-aos="fade-up" data-aos-delay="200">
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium,
+          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer
+       ========================= -->
+  <footer class="border-t border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <div class="grid grid-cols-1 gap-10 md:grid-cols-5">
+        <!-- Address block -->
+        <section class="md:col-span-2" aria-label="Company address">
+          <div class="inline-flex h-10 w-10 items-center justify-center rounded bg-brand-green-dark ring-1 ring-brand-green-dark">
+            <svg viewBox="0 0 24 24" class="h-5 w-5 text-white" aria-hidden="true">
+              <path fill="currentColor" d="M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7Zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5Z"/>
+            </svg>
+          </div>
+          <p class="mt-4 text-sm text-white opacity-80">
+            1717 Harrison St, San Francisco,<br />
+            CA 94103, USA
+          </p>
+        </section>
+
+        <!-- Link columns -->
+        <nav class="md:col-span-3" aria-label="Footer navigation">
+          <div class="grid grid-cols-2 gap-8 sm:grid-cols-4">
+            <div>
+              <h3 class="text-xs font-medium tracking-widest text-white">MAIN MENU</h3>
+              <ul class="mt-3 space-y-2 text-sm text-white opacity-80">
+                <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+                <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+                <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+                <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xs font-medium tracking-widest text-white">COMPANY</h3>
+              <ul class="mt-3 space-y-2 text-sm text-white opacity-80">
+                <li><a href="#" class="hover:text-brand-blue-light">The Company</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Careers</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Press</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xs font-medium tracking-widest text-white">DISCOVER</h3>
+              <ul class="mt-3 space-y-2 text-sm text-white opacity-80">
+                <li><a href="#" class="hover:text-brand-blue-light">The Team</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Our History</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Brand Motto</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="text-xs font-medium tracking-widest text-white">FIND US ON</h3>
+              <ul class="mt-3 space-y-2 text-sm text-white opacity-80">
+                <li><a href="#" class="hover:text-brand-blue-light">Facebook</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Twitter</a></li>
+                <li><a href="#" class="hover:text-brand-blue-light">Instagram</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
+
+      <div class="mt-10 border-t border-brand-green-dark pt-6 text-center text-sm text-white opacity-80">
+        <span aria-hidden="true">©</span> Your Company Name
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating anchor - Spectacular version -->
+  <button
+    id="floatingAnchor"
+    type="button"
+    aria-label="Back to top"
+    class="floating-anchor-btn"
+  >
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+    </svg>
+    <span class="floating-anchor-text">TOP</span>
+  </button>
+
+  <!-- JavaScript -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  
+  <!-- AOS (Animate On Scroll) Library -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
+

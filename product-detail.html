@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aotearoa Adventure Gear | Product</title>
+
+  <!-- Tailwind generated locally (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Custom CSS kept separate and purpose named -->
+  <link rel="stylesheet" href="css/custom-product.css" />
+</head>
+
+<body class="min-h-screen bg-brand-green">
+  <!-- =========================
+       Header and Top Navigation
+       ========================= -->
+  <header class="border-b border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between gap-4 py-3">
+        <!-- Left: logo -->
+        <a href="index.html" class="inline-flex items-center gap-2" aria-label="Go to Home">
+          <img src="src/images/logo.png" alt="Aotearoa Adventure Gear Logo" class="h-7 w-auto" />
+        </a>
+
+        <!-- Center: main navigation -->
+        <nav class="hidden md:block" aria-label="Primary navigation">
+          <ul class="flex items-center gap-4 text-sm text-white">
+            <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: cart button -->
+        <a
+          href="cart.html"
+          class="inline-flex items-center gap-2 bg-brand-blue px-4 py-2 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true">
+            <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6l.3 2h13.9a1 1 0 0 1 1 .8l-1.2 6.5a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.6L4.2 3H2V1h3a1 1 0 0 1 1 .8L6.2 6Z"/>
+          </svg>
+          <span>Your Cart</span>
+        </a>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav class="md:hidden pb-3" aria-label="Primary navigation mobile">
+        <ul class="flex items-center justify-center gap-4 text-xs text-white">
+          <li><a href="index.html" class="hover:text-brand-blue-light">Home</a></li>
+          <li><a href="about.html" class="hover:text-brand-blue-light">About</a></li>
+          <li><a href="shop.html" class="hover:text-brand-blue-light">Shop</a></li>
+          <li><a href="help.html" class="hover:text-brand-blue-light">Help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         Product detail (two columns)
+         ========================= -->
+    <section class="border-b border-brand-green-dark">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+          <!-- Left: large product image placeholder -->
+          <figure class="flex items-center justify-center border-b border-brand-green-dark py-14 lg:border-b-0 lg:border-r lg:py-20">
+            <div class="flex h-72 w-72 items-center justify-center sm:h-96 sm:w-96 lg:h-[420px] lg:w-[420px]">
+              <img src="src/images/products/prod_01_backpack.png" alt="Hiking backpack product photo" class="h-full w-full object-cover" />
+            </div>
+          </figure>
+
+          <!-- Right: product information -->
+          <article class="py-14 lg:py-20">
+            <div class="px-0 lg:pl-14">
+              <h1 class="text-4xl font-light tracking-widest text-white sm:text-5xl">
+                Product title
+              </h1>
+
+              <div class="mt-4 flex items-center gap-4 text-sm text-white opacity-80">
+                <p aria-label="Rating 4 out of 5">★★★★☆</p>
+                <a href="#reviews" class="hover:text-white">5 reviews</a>
+              </div>
+
+              <hr class="mt-6 border-brand-green-dark" />
+
+              <div class="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 sm:items-center">
+                <p class="text-4xl font-light text-white">$ 1232</p>
+
+                <!-- Product model selector (static for Task 1 wireframe match) -->
+                <div class="sm:justify-self-end">
+                  <label class="sr-only" for="model">Select Model</label>
+                  <select
+                    id="model"
+                    name="model"
+                    class="w-56 border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white focus:border-brand-blue focus:outline-none"
+                  >
+                    <option selected>Select Model</option>
+                    <option>Model A</option>
+                    <option>Model B</option>
+                    <option>Model C</option>
+                  </select>
+                </div>
+              </div>
+
+              <p class="mt-10 max-w-lg text-sm leading-7 text-white opacity-80">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation
+              </p>
+
+              <div class="mt-10 h-px w-14 bg-gray-200"></div>
+
+              <div class="mt-10">
+                <a
+                  href="cart.html"
+                  class="inline-flex items-center justify-center bg-brand-blue px-12 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+                >
+                  Add To Cart
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================
+         Similar products
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4 text-center">
+        <h2 class="text-3xl font-light tracking-widest text-white sm:text-4xl">
+          Similar Products
+        </h2>
+
+        <div class="mt-10 grid grid-cols-1 gap-10 sm:grid-cols-3 sm:gap-12">
+          <!-- Similar product 1 -->
+          <article class="text-left">
+            <figure class="w-28">
+              <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green">
+                <img src="src/images/products/prod_02_tent.png" alt="Tent product photo" class="h-full w-full object-cover" />
+              </div>
+            </figure>
+            <p class="mt-4 text-xs tracking-widest text-white">PRODUCT NAME</p>
+            <p class="mt-1 text-xs text-white opacity-80" aria-label="Rating 3 out of 5">★★★☆☆</p>
+            <p class="mt-2 text-xs text-white opacity-80">$300</p>
+          </article>
+
+          <!-- Similar product 2 -->
+          <article class="text-left">
+            <figure class="w-28">
+              <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green">
+                <img src="src/images/products/prod_03_jacket.png" alt="Jacket product photo" class="h-full w-full object-cover" />
+              </div>
+            </figure>
+            <p class="mt-4 text-xs tracking-widest text-white">PRODUCT NAME</p>
+            <p class="mt-1 text-xs text-white opacity-80" aria-label="Rating 3 out of 5">★★★☆☆</p>
+            <p class="mt-2 text-xs text-white opacity-80">$300</p>
+          </article>
+
+          <!-- Similar product 3 -->
+          <article class="text-left">
+            <figure class="w-28">
+              <div class="flex aspect-[4/3] items-center justify-center border border-brand-green-dark bg-brand-green">
+                <img src="src/images/products/04_sleepingbag.png" alt="Sleeping bag product photo" class="h-full w-full object-cover" />
+              </div>
+            </figure>
+            <p class="mt-4 text-xs tracking-widest text-white">PRODUCT NAME</p>
+            <p class="mt-1 text-xs text-white opacity-80" aria-label="Rating 3 out of 5">★★★☆☆</p>
+            <p class="mt-2 text-xs text-white opacity-80">$300</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         Reviews
+         ========================= -->
+    <section id="reviews" class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="text-4xl font-light tracking-widest text-white">Reviews</h2>
+
+        <div class="mt-10 space-y-10">
+          <!-- Review 1 -->
+          <article class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
+            <!-- Avatar + meta -->
+            <header class="md:col-span-3">
+              <div class="flex items-start gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full border border-brand-green-dark bg-brand-green">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6 text-white opacity-80" aria-hidden="true">
+                    <path fill="currentColor" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/>
+                  </svg>
+                </div>
+
+                <div>
+                  <p class="text-sm tracking-widest text-white">JOHN DOE</p>
+                  <p class="mt-1 text-xs text-white opacity-80">august 14, 2018</p>
+                  <p class="mt-2 text-xs text-white opacity-80" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </div>
+            </header>
+
+            <!-- Review text -->
+            <div class="md:col-span-9">
+              <p class="max-w-3xl text-sm leading-7 text-white opacity-80">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in
+              </p>
+            </div>
+          </article>
+
+          <hr class="border-brand-green-dark" />
+
+          <!-- Review 2 -->
+          <article class="grid grid-cols-1 gap-6 md:grid-cols-12 md:gap-10">
+            <header class="md:col-span-3">
+              <div class="flex items-start gap-4">
+                <div class="flex h-12 w-12 items-center justify-center rounded-full border border-brand-green-dark bg-brand-green">
+                  <svg viewBox="0 0 24 24" class="h-6 w-6 text-white opacity-80" aria-hidden="true">
+                    <path fill="currentColor" d="M12 12a4 4 0 1 0-4-4 4 4 0 0 0 4 4Zm0 2c-4.4 0-8 2.2-8 5v1h16v-1c0-2.8-3.6-5-8-5Z"/>
+                  </svg>
+                </div>
+
+                <div>
+                  <p class="text-sm tracking-widest text-white">JOHN DOE</p>
+                  <p class="mt-1 text-xs text-white opacity-80">august 14, 2018</p>
+                  <p class="mt-2 text-xs text-white opacity-80" aria-label="Rating 3 out of 5">★★★☆☆</p>
+                </div>
+              </div>
+            </header>
+
+            <div class="md:col-span-9">
+              <p class="max-w-3xl text-sm leading-7 text-white opacity-80">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+                dolor in
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer (wireframe style)
+       ========================= -->
+  <footer class="py-8">
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <nav aria-label="Footer navigation" class="text-xs text-white opacity-80">
+        <ul class="flex flex-wrap items-center justify-center gap-3">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="help.html" class="hover:text-white">Help</a></li>
+        </ul>
+      </nav>
+
+      <div class="mt-4 text-sm text-white opacity-80">
+        <span aria-hidden="true">©</span> Your Company Name
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

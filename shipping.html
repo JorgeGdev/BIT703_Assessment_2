@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aotearoa Adventure Gear | Shipping</title>
+
+  <!-- Tailwind generated locally (no CDN) -->
+  <link rel="stylesheet" href="css/tailwind.css" />
+
+  <!-- Custom CSS kept separate and purpose named -->
+  <link rel="stylesheet" href="css/custom-shipping.css" />
+</head>
+
+<body class="min-h-screen bg-brand-green">
+  <!-- =========================
+       Header and Top Navigation
+       ========================= -->
+  <header class="border-b border-brand-green-dark">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between gap-4 py-3">
+        <!-- Left: logo -->
+        <a href="index.html" class="inline-flex items-center gap-2" aria-label="Go to Home">
+          <img src="src/images/logo.png" alt="Aotearoa Adventure Gear Logo" class="h-7 w-auto" />
+        </a>
+
+        <!-- Center: main navigation -->
+        <nav class="hidden md:block" aria-label="Primary navigation">
+          <ul class="flex items-center gap-4 text-sm text-white">
+            <li><a href="index.html" class="hover:text-white">Home</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="about.html" class="hover:text-white">About</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+            <li class="text-brand-green-light" aria-hidden="true">|</li>
+            <li><a href="help.html" class="hover:text-white">Help</a></li>
+          </ul>
+        </nav>
+
+        <!-- Right: cart button -->
+        <a
+          href="cart.html"
+          class="inline-flex items-center gap-2 bg-brand-blue px-4 py-2 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+        >
+          <svg viewBox="0 0 24 24" class="h-4 w-4" aria-hidden="true">
+            <path fill="currentColor" d="M7 18a2 2 0 1 0 2 2 2 2 0 0 0-2-2Zm10 0a2 2 0 1 0 2 2 2 2 0 0 0-2-2ZM6.2 6l.3 2h13.9a1 1 0 0 1 1 .8l-1.2 6.5a2 2 0 0 1-2 1.7H8.2a2 2 0 0 1-2-1.6L4.2 3H2V1h3a1 1 0 0 1 1 .8L6.2 6Z"/>
+          </svg>
+          <span>Your Cart</span>
+        </a>
+      </div>
+
+      <!-- Mobile nav -->
+      <nav class="md:hidden pb-3" aria-label="Primary navigation mobile">
+        <ul class="flex items-center justify-center gap-4 text-xs text-white">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+          <li><a href="help.html" class="hover:text-white">Help</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =========================
+         Checkout steps
+         ========================= -->
+    <section class="py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <nav aria-label="Checkout steps">
+          <ol class="flex items-center justify-center gap-12 text-sm">
+            <li class="text-brand-green-light">
+              <span>1. Shopping Cart</span>
+            </li>
+
+            <li class="text-white">
+              <span class="font-medium">2. Shipping Details</span>
+              <div class="mt-3 h-px w-44 bg-gray-700"></div>
+            </li>
+
+            <li class="text-brand-green-light">
+              <span>3. Payment Options</span>
+            </li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
+    <hr class="border-brand-green-dark" />
+
+    <!-- =========================
+         Shipping form (left) + Summary (right)
+         ========================= -->
+    <section class="py-14 sm:py-16">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid grid-cols-1 gap-12 lg:grid-cols-3 lg:gap-16">
+          <!-- Left: shipping details form -->
+          <section class="lg:col-span-2" aria-label="Shipping details form">
+            <header>
+              <h1 class="text-3xl font-light tracking-widest text-white">Shipping Details</h1>
+            </header>
+
+            <hr class="mt-6 border-brand-green-dark" />
+
+            <form id="shippingForm" class="mt-8" action="payment.html" method="post" novalidate>
+              <!-- Customer details -->
+              <fieldset>
+                <legend class="sr-only">Customer details</legend>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div>
+                    <label class="sr-only" for="firstName">First Name</label>
+                    <input
+                      id="firstName"
+                      name="firstName"
+                      type="text"
+                      placeholder="First Name *"
+                      required
+                      minlength="2"
+                      maxlength="50"
+                      pattern="[A-Za-z\s\-']+"
+                      autocomplete="given-name"
+                      title="Please enter a valid first name (letters, spaces, hyphens and apostrophes only)"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                    />
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+
+                  <div>
+                    <label class="sr-only" for="lastName">Last Name</label>
+                    <input
+                      id="lastName"
+                      name="lastName"
+                      type="text"
+                      placeholder="Last Name *"
+                      required
+                      minlength="2"
+                      maxlength="50"
+                      pattern="[A-Za-z\s\-']+"
+                      autocomplete="family-name"
+                      title="Please enter a valid last name (letters, spaces, hyphens and apostrophes only)"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                    />
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+                </div>
+
+                <div class="mt-6">
+                  <label class="sr-only" for="address1">Address</label>
+                  <input
+                    id="address1"
+                    name="address1"
+                    type="text"
+                    placeholder="Address *"
+                    required
+                    minlength="5"
+                    maxlength="100"
+                    autocomplete="address-line1"
+                    title="Please enter your street address"
+                    class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                  />
+                  <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                </div>
+
+                <div class="mt-6">
+                  <label class="sr-only" for="address2">Address 2</label>
+                  <input
+                    id="address2"
+                    name="address2"
+                    type="text"
+                    placeholder="Address 2 (optional)"
+                    maxlength="100"
+                    autocomplete="address-line2"
+                    class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                  />
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div>
+                    <label class="sr-only" for="country">Country</label>
+                    <select
+                      id="country"
+                      name="country"
+                      required
+                      autocomplete="country-name"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white focus:border-brand-blue focus:outline-none"
+                    >
+                      <option value="" selected disabled>Country *</option>
+                      <option value="NZ">New Zealand</option>
+                      <option value="AU">Australia</option>
+                      <option value="US">United States</option>
+                    </select>
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+
+                  <div>
+                    <label class="sr-only" for="city">City</label>
+                    <input
+                      id="city"
+                      name="city"
+                      type="text"
+                      placeholder="City *"
+                      required
+                      minlength="2"
+                      maxlength="50"
+                      pattern="[A-Za-z\s\-']+"
+                      autocomplete="address-level2"
+                      title="Please enter a valid city name"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                    />
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+                </div>
+
+                <div class="mt-6 grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <div>
+                    <label class="sr-only" for="postalCode">Zip/Postal Code</label>
+                    <input
+                      id="postalCode"
+                      name="postalCode"
+                      type="text"
+                      placeholder="Zip/Postal Code *"
+                      required
+                      autocomplete="postal-code"
+                      title="Please enter a valid postal code"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                    />
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+
+                  <div>
+                    <label class="sr-only" for="phone">Phone Number</label>
+                    <input
+                      id="phone"
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone Number *"
+                      required
+                      autocomplete="tel"
+                      title="Please enter a valid phone number"
+                      class="w-full border border-brand-green-dark bg-brand-green px-4 py-2 text-sm text-white placeholder:text-white opacity-80 focus:border-brand-blue focus:outline-none"
+                    />
+                    <span class="error-message hidden text-red-400 text-xs mt-1"></span>
+                  </div>
+                </div>
+              </fieldset>
+
+              <!-- Shipping method -->
+              <fieldset class="mt-10">
+                <legend class="sr-only">Shipping method</legend>
+
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                  <!-- Option 1 -->
+                  <label class="block cursor-pointer">
+                    <span class="sr-only">Free Shipping</span>
+                    <div class="flex items-start gap-4 border border-brand-green-dark bg-brand-green-dark px-5 py-5">
+                      <input
+                        id="shipFree"
+                        type="radio"
+                        name="shippingMethod"
+                        value="free"
+                        data-ship-cost="0"
+                        class="mt-1"
+                        checked
+                        aria-label="Free shipping"
+                      />
+                      <div>
+                        <p class="text-sm text-white">Free Shipping</p>
+                        <p class="mt-1 text-xs text-white opacity-80">Between 2 - 5 working days</p>
+                      </div>
+                    </div>
+                  </label>
+
+                  <!-- Option 2 -->
+                  <label class="block cursor-pointer">
+                    <span class="sr-only">Next Day Delivery</span>
+                    <div class="flex items-start gap-4 border border-brand-green-dark bg-brand-green px-5 py-5">
+                      <input
+                        id="shipNext"
+                        type="radio"
+                        name="shippingMethod"
+                        value="nextDay"
+                        data-ship-cost="20"
+                        class="mt-1"
+                        aria-label="Next day delivery"
+                      />
+                      <div>
+                        <p class="text-sm text-white opacity-80">Next Day Delivery - $20</p>
+                        <p class="mt-1 text-xs text-white opacity-80">24 hours from checkout</p>
+                      </div>
+                    </div>
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="mt-12 flex items-center gap-4">
+                <button
+                  type="submit"
+                  class="inline-flex items-center justify-center bg-brand-blue px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+                >
+                  Next
+                </button>
+
+                <a
+                  href="cart.html"
+                  class="inline-flex items-center justify-center bg-brand-green-dark px-10 py-3 text-xs font-medium tracking-widest text-white hover:bg-brand-blue-dark focus:outline-none"
+                >
+                  Cancel
+                </a>
+              </div>
+            </form>
+          </section>
+
+          <!-- Right: summary -->
+          <aside class="lg:col-span-1" aria-label="Order summary">
+            <h2 class="text-3xl font-light tracking-widest text-white">Summary</h2>
+            <hr class="mt-6 border-brand-green-dark" />
+
+            <!-- Summary product items -->
+            <div class="mt-8 space-y-8">
+              <article class="flex items-center gap-5">
+                <figure class="w-20">
+                  <div class="flex aspect-square items-center justify-center border border-brand-green-dark bg-brand-green">
+                    <img src="src/images/products/prod_01_backpack.png" alt="Order summary hiking backpack" class="h-full w-full object-cover" />
+                  </div>
+                </figure>
+
+                <div class="min-w-0">
+                  <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                  <p class="mt-2 text-sm text-white opacity-80">$300</p>
+                </div>
+              </article>
+
+              <article class="flex items-center gap-5">
+                <figure class="w-20">
+                  <div class="flex aspect-square items-center justify-center border border-brand-green-dark bg-brand-green">
+                    <img src="src/images/products/prod_02_tent.png" alt="Order summary tent" class="h-full w-full object-cover" />
+                  </div>
+                </figure>
+
+                <div class="min-w-0">
+                  <p class="text-xs tracking-widest text-white">PRODUCT NAME</p>
+                  <p class="mt-2 text-sm text-white opacity-80">$300</p>
+                </div>
+              </article>
+
+              <hr class="border-brand-green-dark" />
+
+              <!-- Voucher toggle label -->
+              <div class="flex items-center justify-between text-xs tracking-widest text-white opacity-80">
+                <p>HAVE A VOUCHER?</p>
+                <span aria-hidden="true">▾</span>
+              </div>
+
+              <dl class="space-y-3 text-sm text-white opacity-80">
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">SUBTOTAL</dt>
+                  <dd id="shipSubtotal">$600</dd>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">SHIPPING</dt>
+                  <dd id="shipShipping">FREE</dd>
+                </div>
+
+                <div class="flex items-center justify-between">
+                  <dt class="tracking-widest">TAXES</dt>
+                  <dd id="shipTaxes">$13</dd>
+                </div>
+              </dl>
+
+              <hr class="border-brand-green-dark" />
+
+              <div class="flex items-end justify-between">
+                <p class="text-xl tracking-widest text-white">TOTAL</p>
+                <p id="shipTotal" class="text-3xl font-light text-white">$613</p>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================
+       Footer (wireframe style)
+       ========================= -->
+  <footer class="py-8">
+    <div class="mx-auto max-w-6xl px-4 text-center">
+      <nav aria-label="Footer navigation" class="text-xs text-white opacity-80">
+        <ul class="flex flex-wrap items-center justify-center gap-3">
+          <li><a href="index.html" class="hover:text-white">Home</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="about.html" class="hover:text-white">About</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="shop.html" class="hover:text-white">Shop</a></li>
+          <li class="text-brand-green-light" aria-hidden="true">|</li>
+          <li><a href="help.html" class="hover:text-white">Help</a></li>
+        </ul>
+      </nav>
+
+      <div class="mt-4 text-sm text-white opacity-80">
+        <span aria-hidden="true">©</span> Your Company Name
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="js/common.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/shipping.js"></script>
+</body>
+</html>
+

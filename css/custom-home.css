@@ -1,0 +1,241 @@
+/* Custom CSS for the Home page.
+   Keep this file small and purpose focused to meet the assessment requirement. */
+
+:root {
+  /* You can later derive these from the provided logo colours. */
+  --ui-border: #e5e7eb;
+  --ui-text: #6b7280;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  color: var(--ui-text);
+}
+
+/* Improve focus visibility for keyboard users */
+:focus-visible {
+  outline: 2px solid #9ca3af;
+  outline-offset: 2px;
+}
+
+/* Swiper customizations for Featured Products */
+.featured-swiper {
+  padding: 50px 0 60px;
+  overflow: visible !important;
+}
+
+.featured-swiper .swiper-slide {
+  width: 280px;
+  max-width: 90%;
+  transition: transform 0.3s ease;
+}
+
+.featured-swiper .swiper-slide-active {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+/* Custom navigation buttons */
+.featured-swiper .swiper-button-prev,
+.featured-swiper .swiper-button-next {
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.featured-swiper .swiper-button-prev:hover,
+.featured-swiper .swiper-button-next:hover {
+  background: rgba(66, 153, 225, 0.3);
+  transform: scale(1.15);
+}
+
+.featured-swiper .swiper-button-prev::after,
+.featured-swiper .swiper-button-next::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Custom pagination */
+.featured-swiper .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+.featured-swiper .swiper-pagination-bullet {
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  width: 10px;
+  height: 10px;
+  transition: all 0.3s ease;
+}
+
+.featured-swiper .swiper-pagination-bullet-active {
+  background: #4299e1;
+  transform: scale(1.4);
+}
+
+/* Slide shadows for 3D depth */
+.featured-swiper .swiper-slide-shadow-left,
+.featured-swiper .swiper-slide-shadow-right {
+  background-image: linear-gradient(to right, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .featured-swiper .swiper-slide {
+    width: 220px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured-swiper .swiper-slide {
+    width: 320px;
+  }
+}
+
+/* Floating Anchor - Spectacular Design */
+.floating-anchor-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4299e1 0%, #3182ce 100%);
+  border-radius: 50%;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(66, 153, 225, 0.4);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1000;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  overflow: visible;
+}
+
+.floating-anchor-btn.show {
+  display: flex;
+  animation: floatIn 0.5s ease-out, pulse 2s ease-in-out infinite;
+}
+
+.floating-anchor-btn:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 35px rgba(66, 153, 225, 0.6);
+  background: linear-gradient(135deg, #3182ce 0%, #2c5aa0 100%);
+}
+
+.floating-anchor-btn:active {
+  transform: translateY(-2px) scale(1.05);
+}
+
+.floating-anchor-btn svg {
+  color: white;
+  animation: bounce 1.5s ease-in-out infinite;
+}
+
+.floating-anchor-btn:hover svg {
+  animation: bounceUp 0.6s ease-out;
+}
+
+.floating-anchor-text {
+  position: absolute;
+  bottom: 70px;
+  right: 0;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.floating-anchor-btn:hover .floating-anchor-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.floating-anchor-text::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  right: 15px;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgba(0, 0, 0, 0.8);
+}
+
+/* Keyframe animations */
+@keyframes floatIn {
+  from {
+    opacity: 0;
+    transform: translateY(50px) scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 10px 25px rgba(66, 153, 225, 0.4);
+  }
+  50% {
+    box-shadow: 0 10px 35px rgba(66, 153, 225, 0.6), 0 0 0 10px rgba(66, 153, 225, 0.1);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bounceUp {
+  0% {
+    transform: translateY(0);
+  }
+  30% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .floating-anchor-btn {
+    width: 50px;
+    height: 50px;
+    bottom: 20px;
+    right: 20px;
+  }
+  
+  .floating-anchor-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
