@@ -40,7 +40,7 @@ Aotearoa Adventure Gear is a fully functional e-commerce prototype showcasing be
 
 ---
 
-## ✨ Features
+## Features
 
 ### User Interface
 - Clean, modern design with consistent branding
