@@ -1,4 +1,4 @@
-# 🏔️ Aotearoa Adventure Gear
+# Aotearoa Adventure Gear
 
 [![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/HTML)
 [![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/en-US/docs/Web/CSS)
@@ -11,7 +11,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Features](#-features)
@@ -26,7 +26,7 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
 Aotearoa Adventure Gear is a fully functional e-commerce prototype showcasing best practices in modern web development. The project demonstrates a complete shopping experience from product browsing to checkout, with robust form validation and responsive design.
 
@@ -34,38 +34,38 @@ Aotearoa Adventure Gear is a fully functional e-commerce prototype showcasing be
 
 | Task | Description | Status |
 |------|-------------|--------|
-| Task 1 | HTML/CSS Implementation with Semantic Markup | ✅ Complete |
-| Task 2 | JavaScript Functionality (Cart, Shipping, Countdown) | ✅ Complete |
-| Task 3 | Form Validation & Error Handling | ✅ Complete |
+| Task 1 | HTML/CSS Implementation with Semantic Markup | Complete |
+| Task 2 | JavaScript Functionality (Cart, Shipping, Countdown) | Complete |
+| Task 3 | Form Validation & Error Handling | Complete |
 
 ---
 
 ## ✨ Features
 
 ### User Interface
-- 🎨 Clean, modern design with consistent branding
-- 📱 Fully responsive layout (mobile, tablet, desktop)
-- 🌙 Dark green theme inspired by New Zealand's natural landscape
-- ⚡ Smooth animations and transitions (AOS library)
-- 🎠 Interactive product carousel (Swiper.js)
+- Clean, modern design with consistent branding
+- Fully responsive layout (mobile, tablet, desktop)
+- Dark green theme inspired by New Zealand's natural landscape
+- Smooth animations and transitions (AOS library)
+- Interactive product carousel (Swiper.js)
 
 ### E-Commerce Functionality
-- 🛒 Dynamic shopping cart with quantity management
-- 💰 Real-time price calculations (subtotal, taxes, shipping)
-- 🚚 Multiple shipping options with automatic free shipping over $600
-- 💳 Complete checkout flow (Cart → Shipping → Payment)
-- ⏰ Countdown timer for promotional offers
+- Dynamic shopping cart with quantity management
+- Real-time price calculations (subtotal, taxes, shipping)
+- Multiple shipping options with automatic free shipping over $600
+- Complete checkout flow (Cart → Shipping → Payment)
+- Countdown timer for promotional offers
 
 ### Form Validation
-- ✅ HTML5 native validation attributes
-- 🔒 JavaScript validation for enhanced security
-- 🌍 Country-specific validation (NZ, AU, US postal codes & phone numbers)
-- 💳 Credit card validation with Luhn algorithm
-- ♿ Accessible error messages with ARIA support
+- HTML5 native validation attributes
+- JavaScript validation for enhanced security
+- Country-specific validation (NZ, AU, US postal codes & phone numbers)
+- Credit card validation with Luhn algorithm
+- Accessible error messages with ARIA support
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 assessment2/
@@ -105,11 +105,6 @@ assessment2/
 │       ├── categories/     # Category images
 │       └── products/       # Product images
 │
-├── docs/
-│   ├── countdown-timer-implementation.md
-│   ├── javascript-validation-justification.md
-│   ├── form-validation-implementation.md
-│   └── task3-justification.md
 │
 ├── tailwind.config.js      # Tailwind configuration
 ├── package.json            # Project dependencies
@@ -118,7 +113,7 @@ assessment2/
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 ### Core Technologies
 | Technology | Version | Purpose |
@@ -142,7 +137,7 @@ assessment2/
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 - Node.js (v16 or higher)
@@ -173,7 +168,7 @@ assessment2/
 
 ---
 
-## 📄 Pages
+## Pages
 
 ### Home Page (`index.html`)
 - Hero section with promotional images
@@ -210,7 +205,7 @@ assessment2/
 
 ---
 
-## 🔒 Form Validation
+## Form Validation
 
 ### HTML5 Validation Features
 - `required` - Mandatory field enforcement
@@ -237,22 +232,22 @@ assessment2/
 
 ---
 
-## ♿ Accessibility
+## Accessibility
 
 This project follows WCAG 2.1 guidelines:
 
-- ✅ Semantic HTML structure
-- ✅ ARIA labels and attributes
-- ✅ Keyboard navigation support
-- ✅ Focus visible indicators
-- ✅ Screen reader compatible error messages
-- ✅ Sufficient colour contrast
-- ✅ Skip navigation links
-- ✅ Alt text for all images
+- Semantic HTML structure
+- ARIA labels and attributes
+- Keyboard navigation support
+- Focus visible indicators
+- Screen reader compatible error messages
+- Sufficient colour contrast
+- Skip navigation links
+- Alt text for all images
 
 ---
 
-## 📚 Documentation
+## Documentation
 
 Detailed documentation is available in the `docs/` folder:
 
@@ -265,17 +260,17 @@ Detailed documentation is available in the `docs/` folder:
 
 ---
 
-## 👤 Author
+## Author
 
-**Jorge G.**
+**Jorge Guerrero**
 
 - GitHub: [@JorgeGdev](https://github.com/JorgeGdev)
 - Course: BIT703 - Web Development
-- Institution: [Your Institution Name]
+- Open Polytechnic of New Zealand
 
 ---
 
-## 📝 License
+## License
 
 This project is developed for educational purposes as part of BIT703 Assessment 2.
 
@@ -283,6 +278,6 @@ This project is developed for educational purposes as part of BIT703 Assessment 
 
 <div align="center">
 
-**Made with ❤️ in New Zealand**
+**Made with ❤️ in Tauranga NZ**
 
 </div>
